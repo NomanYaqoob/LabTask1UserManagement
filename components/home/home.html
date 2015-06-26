@@ -1,0 +1,32 @@
+
+
+<div layout="column" class="col-md-6 col-md-offset-3" layout-sm="column">
+    <md-input-container flex>
+        <label>First name</label>
+        <input ng-model="home.user.name">
+    </md-input-container>
+    <md-input-container flex>
+        <label>Age</label>
+        <input ng-model="home.user.age">
+    </md-input-container>
+    <md-input-container flex>
+        <label>Email</label>
+        <input ng-model="home.user.email">
+    </md-input-container>
+    <md-button class="md-raised" ng-click= "home.newUser()" >Add</md-button>
+    <md-button class="md-raised" ng-click= "home.status()" >{{home.listStatus}} List</md-button>
+</div>
+<div class="col-md-8 col-md-offset-2 " ng-show="home.show">
+    <md-list>
+        <md-subheader class="md-no-sticky">Users</md-subheader>
+        <md-list-item class="md-3-line" ng-repeat="item in home.allUsers">
+            <div class="md-list-item-text">
+                <h3>{{ item.name }}</h3>
+                <h4>{{ item.age }}</h4>
+                <p>{{ item.email }}</p>
+            </div>
+            <!--<md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat" md-svg-icon="communication:message"></md-icon>-->
+            <ng-md-icon icon="settings" class="md-secondary" ng-click="home.editUser($index,'edit')"></ng-md-icon>
+        </md-list-item>
+    </md-list>
+</div>
