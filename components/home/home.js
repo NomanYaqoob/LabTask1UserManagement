@@ -4,8 +4,7 @@
 
 
 angular.module("UserApp").
-    value("indexOfArr",0).
-    controller("HomeController", function (UserData,$location) {
+    controller("HomeController", function (UserData) {
         this.show = false;
         this.listStatus = "Show";
         this.newUser = function () {
@@ -29,11 +28,11 @@ angular.module("UserApp").
 
         };
 
-        this.editUser = function (index,view,indexOfArr) {
+       /* this.editUser = function (index,view,indexOfArr) {
             console.log(index);
             indexOfArr = index;
             console.log(indexOfArr);
             $location.path(view);
-        }
+        }*/
 
     });

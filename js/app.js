@@ -11,7 +11,9 @@ angular.module("UserApp",["ngNewRouter","ngMaterial",'ngMdIcons']).
         $router.config([
             {path:"/",redirectTo:"/home"},
             {path:"/home",component:"home"},
-            {path:"/edit",component:"edit"}
+            /*{path:"/edit",component:"edit"},*/
+            {path:"/edit/:id",component:"edit"},
+            {path:"/check/:id",component:"check"}
         ])
 
 

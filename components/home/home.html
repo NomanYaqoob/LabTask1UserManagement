@@ -26,7 +26,8 @@
                 <p>{{ item.email }}</p>
             </div>
             <!--<md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat" md-svg-icon="communication:message"></md-icon>-->
-            <ng-md-icon icon="settings" class="md-secondary" ng-click="home.editUser($index,'edit')"></ng-md-icon>
+            <a ng-link="edit({id:$index})">Edit</a>
+            <!--<ng-md-icon icon="settings" class="md-secondary" ng-click="home.editUser($index,'edit')"></ng-md-icon>-->
         </md-list-item>
     </md-list>
 </div>

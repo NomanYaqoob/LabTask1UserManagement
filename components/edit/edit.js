@@ -3,15 +3,24 @@
  */
 
 angular.module("UserApp").
-    controller("EditController", function (UserData,indexOfArr) {
+    controller("EditController", function (UserData) {
 
+        this.user = {};
 
+        this.user.name = "ahmed";
         this.users = UserData.getUsers();
+        //console.log("routeParams: "+ $routeParams);
+        //this.id = $routeParams.id;
+       /* console.log(users);
+        this.user.name = users[id].name;
+        this.user.age = users[id].age;
+        this.user.email = users[id].email;
+*/
+        this.show = function () {
+            this.allUsers = UserData.getUsers();
+            console.log("abc");
+            console.log(allUsers);
+        };
 
-        console.log(typeof indexOfArr);
-        console.log(users);
-        this.user.name = users[indexOfArr].name;
-        this.user.age = users[indexOfArr].age;
-        this.user.email = users[indexOfArr].email;
 
     });
