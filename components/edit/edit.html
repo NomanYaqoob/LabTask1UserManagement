@@ -11,5 +11,19 @@
             <label>Email</label>
             <input ng-model="edit.user.email">
         </md-input-container>
-        <md-button class="md-raised" ng-click= "edit.show()" >Update</md-button>
+        <md-button class="md-raised" ng-click= "edit.update()" >Update</md-button>
+        <md-button class="md-raised" ng-click= "edit.status()" >{{edit.listStatus}} List</md-button>
+    </div>
+    <div class="col-md-8 col-md-offset-2 " ng-show="edit.show">
+        <md-list>
+            <md-subheader class="md-no-sticky">Users</md-subheader>
+            <md-list-item class="md-3-line" ng-repeat="item in edit.users">
+                <div class="md-list-item-text">
+                    <h3>Name: {{ item.name }}</h3>
+                    <h4>Age: {{ item.age }}</h4>
+                    <p>Email: {{ item.email }}</p>
+                </div>
+                <md-divider inset></md-divider>
+            </md-list-item>
+        </md-list>
     </div>

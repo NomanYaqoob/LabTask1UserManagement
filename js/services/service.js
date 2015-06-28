@@ -15,4 +15,8 @@ angular.module("UserApp").
         this.getUsers = function () {
             return users;
         }
+
+        this.addUserWithIndex = function (updatedUser, index) {
+            users[index] = updatedUser;
+        }
     });

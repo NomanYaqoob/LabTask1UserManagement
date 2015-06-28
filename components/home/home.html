@@ -19,15 +19,16 @@
 <div class="col-md-8 col-md-offset-2 " ng-show="home.show">
     <md-list>
         <md-subheader class="md-no-sticky">Users</md-subheader>
-        <md-list-item class="md-3-line" ng-repeat="item in home.allUsers">
+        <md-list-item class="md-3-line" ng-repeat="item in home.arrayList">
             <div class="md-list-item-text">
-                <h3>{{ item.name }}</h3>
-                <h4>{{ item.age }}</h4>
-                <p>{{ item.email }}</p>
+                <h3>Name: {{ item.name }}</h3>
+                <h4>Age: {{ item.age }}</h4>
+                <p>Email: {{ item.email }}</p>
             </div>
             <!--<md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat" md-svg-icon="communication:message"></md-icon>-->
-            <a ng-link="edit({id:$index})">Edit</a>
-            <!--<ng-md-icon icon="settings" class="md-secondary" ng-click="home.editUser($index,'edit')"></ng-md-icon>-->
+            <a ng-link="edit({id:$index})"><ng-md-icon icon="settings" class="md-secondary"></ng-md-icon></a>
+            <md-divider inset></md-divider>
         </md-list-item>
+
     </md-list>
 </div>

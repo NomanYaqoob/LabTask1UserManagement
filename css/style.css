@@ -1,0 +1,15 @@
+.headerLink {
+    font-size: 35px;
+    text-decoration: none !important;
+    font-weight: bold;
+    font-family: Calibri, Cambria, sans-serif;
+}
+
+.headerLink:hover{
+    color: rgba(215, 22, 0, 0.94);
+}
+
+.headerLink:visited {
+    color: rgba(221, 31, 103, 0.94);
+}
+
