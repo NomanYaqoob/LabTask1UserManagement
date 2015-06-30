@@ -10,17 +10,11 @@ angular.module("UserApp").
         this.show = false;
         this.listStatus = "Show";
         this.newUser = function () {
-            console.log(this.user);
-            //UserData.addUser(this.user);
-            /*this.arrayList.$add({
-                from:this.user.name+":"+this.user.age,
-                content: this.user
-            });*/
+            //console.log(this.user);
             this.arrayList.$add(this.user);
             this.user = "";
-            this.arrayList = "";
+            //this.arrayList = "";
         };
-        //this.allUsers = UserData.getUsers();
 
         this.status = function () {
             if(this.show == false){

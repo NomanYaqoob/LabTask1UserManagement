@@ -3,21 +3,19 @@
  */
 
 angular.module("UserApp").
-    controller("EditController", function (UserData,$routeParams) {
+    controller("EditController", function ($routeParams,userFactory) {
 
         this.show = false;
         this.listStatus = "Show";
         this.user = {};
-        this.users = UserData.getUsers();
-        //console.log("routeParams: "+ $routeParams);
+        this.users = userFactory;
+        console.log(this.users);
         var id = $routeParams.id;
-
-        this.user.name = this.users[id].name;
-        this.user.age = this.users[id].age;
-        this.user.email = this.users[id].email;
+        var updatedUser = this.users.$getRecord(this.users[id].$id);
+        this.user = updatedUser;
 
         this.update = function () {
-            UserData.addUserWithIndex(this.user,id);
+            this.users.$save(this.user);
             this.user = {};
         };
 
